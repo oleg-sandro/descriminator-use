@@ -4,6 +4,7 @@ import com.example.model.Message;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
