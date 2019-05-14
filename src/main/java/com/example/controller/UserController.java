@@ -34,7 +34,7 @@ public class UserController {
 
     //@RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @PostMapping("")
-    public ResponseEntity<User> createUser(@RequestBody User user){
+    public ResponseEntity<?> createUser(@RequestBody User user){
         if(user == null){
             return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
         }
@@ -47,7 +47,7 @@ public class UserController {
 
     //@RequestMapping(value = ""/*"{id}"*/, method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @PutMapping("{id}")
-    public ResponseEntity<User> modifyUser(@PathVariable("id") Integer id, @RequestBody User user/*, @PathVariable Integer id*/){
+    public ResponseEntity<?> modifyUser(@PathVariable("id") Integer id, @RequestBody User user/*, @PathVariable Integer id*/){
         if(user == null){
             return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
         }
@@ -59,7 +59,7 @@ public class UserController {
 
     //@RequestMapping(value="{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @DeleteMapping("{id}")
-    public ResponseEntity<User> deleteUser(@PathVariable("id") Integer id){
+    public ResponseEntity<?> deleteUser(@PathVariable("id") Integer id){
         //new user = get existing user by id
         //if user is null - 404 Not Found
         //delete user by id
