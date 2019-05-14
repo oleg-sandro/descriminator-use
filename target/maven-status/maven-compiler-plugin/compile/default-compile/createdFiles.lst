@@ -1,0 +1,11 @@
+com\example\entities\User.class
+com\example\controller\UserController.class
+com\example\dao\UserDaoImpl.class
+com\example\configuration\AppConfiguraion.class
+com\example\dao\UserDao.class
+com\example\service\UserServiceImpl.class
+com\example\service\UserService.class
+com\example\configuration\WebInitializer.class
+com\example\model\Message.class
+com\example\configuration\WebConfiguration.class
+com\example\controller\MessageController.class
