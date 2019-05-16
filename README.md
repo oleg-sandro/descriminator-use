@@ -1,4 +1,4 @@
-# first-rest-project
+# FirstRestProject
 RESTful web service project with CRUD methods
 
 ---
@@ -17,7 +17,7 @@ RESTful web service project with CRUD methods
 * Git
 
 ---
-h1 Database h1
+**Database**
 
 ---
 
@@ -63,7 +63,7 @@ ADD CONSTRAINT `fk_dictionary_user`
 
 In result you must get the following graphic schema of the database:
 
-![Graphic Schema of the Database](https://i.imgur.com/8m2QtUU.png)
+![graphic schema of the database](https://i.imgur.com/8m2QtUU.png)
 
 To populate the new clean database `service` by data you must execute the following commands in SQL editor of MySQL Workbench.
 
@@ -83,7 +83,14 @@ INSERT INTO `service`.`user` (`login`, `password`, `id_role`) VALUES ('user', 'q
 
 ---
 
+The graphic view of project structure tree is shown below:
+
+![graphic view of the project structure tree](https://i.imgur.com/BBXjGV1.png)
+
+Next you can see overall explanations about each important package or file:
+
 > `src\main\resources` – resources directory
+
 > `src\main\java` – sources directory
 
 The main files, which directory `src\main\resources` contains:
@@ -123,12 +130,70 @@ The main packages and files, which directory `src\main\java` contains in the pac
 To build, deploy and run the app you must execute the following commands for Maven.
 
 Perform this to trigger WAR packaging:
+
 `mvn clean install`
 
 Perform this command to deploy the WAR automatically and run it on embedded Tomcat:
+
 `mvn tomcat7:run`
 
 ---
 **Testing**
 
 ---
+For app testing it is useful to apply [Postman](https://www.getpostman.com/) software. It lets you to send HTTP requests of any nature. We are interested in GET, POST, PUT and DELETE methods now.
+
+
+`Create a user in the database`
+
+Send POST via Postman (necessarily with JSON in HTTP body, which corresponds to JSON of User) to create the user in the database:
+
+`http://localhost:8080/user/`
+
+with the body 
+
+```json
+{
+    "login": "john",
+    "password": "abcdef",
+    "id_role": 1
+}
+```
+
+
+`Read the user from the database`
+
+Send GET via Postman to get the user from the database with `id = 1`:
+
+`http://localhost:8080/user/1`
+
+
+`Update the user in the database`
+
+Send PUT via Postman (necessarily with JSON in HTTP body, which corresponds to JSON of User) to modify the user in the database with `id = 2`:
+
+`http://localhost:8080/user/2`
+
+with the body 
+
+```json
+{
+    "login": "maria",
+    "password": "20122012",
+    "id_role": 1
+}
+```
+
+
+`Delete the user from the database`
+
+Send DELETE via Postman to remove the user from the database with `id = 2`:
+
+`http://localhost:8080/user/2`
+
+
+`Read all users from the database`
+
+Send GET via Postman to get all user from the database:
+
+`http://localhost:8080/user/`
