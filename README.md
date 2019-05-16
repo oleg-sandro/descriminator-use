@@ -1,8 +1,10 @@
 # first-rest-project
 RESTful web service project with CRUD methods
+
 ---
-Technology stack
+Technology Stack
 ---
+
 * Java 8
 * Intellij IDEA
 * MySQL
@@ -16,6 +18,7 @@ Technology stack
 ---
 Database
 ---
+
 To create a clean database with 2 tables inside (`dictionary` and `user`) you must execute the following commands in SQL editor of MySQL Workbench. 
 
 The creation of the database `service`:
@@ -56,8 +59,23 @@ ADD CONSTRAINT `fk_dictionary_user`
   ON UPDATE CASCADE;
 ```
 
+To populate the new clean database `service` by data you must execute the following commands in SQL editor of MySQL Workbench.
+
+The creation of 2 records in the table `dictionary`:
+```sql
+INSERT INTO `service`.`dictionary` (`discriminator`, `name`) VALUES ('role', 'user');
+INSERT INTO `service`.`dictionary` (`discriminator`, `name`) VALUES ('role', 'admin');
+```
+
+The creation of 1 record in  the table `user`:
+```sql
+INSERT INTO `service`.`user` (`login`, `password`, `id_role`) VALUES ('user', 'qwerty', '2');
+```
 
 ---
+Project Structure
+---
+
 File with database connection properties:
 FirstRestProject/src/main/resources/db.properties
 
