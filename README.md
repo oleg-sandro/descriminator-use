@@ -97,6 +97,8 @@ The main files, which directory `src\main\resources` contains:
 
 * `db.properties` - file with definitions of MySQL, Hibernate and c3p0 library connection pooling properties
 
+
+
 The main packages and files, which directory `src\main\java` contains in the package `com.example`:
 
 > package `entities` - `@Entity` classes
@@ -111,7 +113,7 @@ The main packages and files, which directory `src\main\java` contains in the pac
 
 > package `service` - `@Service` classes
 * `UserService` - service interface for `User` class
-* `UserServiceImpl` - service class for for `User` class
+* `UserServiceImpl` - service class for `User` class
 
 > package `dao` - `@Repository` classes
 * `UserDao` - DAO interface for `User` class
@@ -141,12 +143,13 @@ Perform this command to deploy the WAR automatically and run it on embedded Tomc
 **Testing**
 
 ---
-For app testing it is useful to apply [Postman](https://www.getpostman.com/) software. It lets you to send HTTP requests of any nature. We are interested in GET, POST, PUT and DELETE methods now.
+For app testing it is useful to apply `[Postman](https://www.getpostman.com/)` software. It lets you to send HTTP requests of any nature. We are interested in GET, POST, PUT and DELETE methods now.
 
 
-`Create a user in the database`
 
-Send POST via Postman (necessarily with JSON in HTTP body, which corresponds to JSON of User) to create the user in the database:
+**Create a user in the database**
+
+Send POST via Postman (necessarily with JSON in HTTP body, which corresponds to JSON of `User`) to create the user in the database:
 
 `http://localhost:8080/user/`
 
@@ -161,16 +164,18 @@ with the body
 ```
 
 
-`Read the user from the database`
+
+**Read the user from the database**
 
 Send GET via Postman to get the user from the database with `id = 1`:
 
 `http://localhost:8080/user/1`
 
 
-`Update the user in the database`
 
-Send PUT via Postman (necessarily with JSON in HTTP body, which corresponds to JSON of User) to modify the user in the database with `id = 2`:
+**Update the user in the database**
+
+Send PUT via Postman (necessarily with JSON in HTTP body, which corresponds to JSON of `User`) to modify the user in the database with `id = 2`:
 
 `http://localhost:8080/user/2`
 
@@ -185,15 +190,22 @@ with the body
 ```
 
 
-`Delete the user from the database`
+
+**Delete the user from the database**
 
 Send DELETE via Postman to remove the user from the database with `id = 2`:
 
 `http://localhost:8080/user/2`
 
 
-`Read all users from the database`
+
+**Read all users from the database**
 
 Send GET via Postman to get all user from the database:
 
 `http://localhost:8080/user/`
+
+
+Example of working project is shown below. Here it is the result of getting of all users from the database:
+
+![result of working project (get all users)](https://i.imgur.com/ATPl4eP.png)
