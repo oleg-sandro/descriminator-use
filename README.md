@@ -2,7 +2,8 @@
 RESTful web service project with CRUD methods
 
 ---
-Technology Stack
+**Technology Stack**
+
 ---
 
 * Java 8
@@ -16,7 +17,8 @@ Technology Stack
 * Git
 
 ---
-Database
+h2 Database
+
 ---
 
 To create a clean database with 2 tables inside (`dictionary` and `user`) you must execute the following commands in SQL editor of MySQL Workbench. 
@@ -59,6 +61,9 @@ ADD CONSTRAINT `fk_dictionary_user`
   ON UPDATE CASCADE;
 ```
 
+In result you must get the following graphic schema of the database:
+![Graphic Schema of the Database](https://i.imgur.com/8m2QtUU.png)
+
 To populate the new clean database `service` by data you must execute the following commands in SQL editor of MySQL Workbench.
 
 The creation of 2 records in the table `dictionary`:
@@ -73,30 +78,38 @@ INSERT INTO `service`.`user` (`login`, `password`, `id_role`) VALUES ('user', 'q
 ```
 
 ---
-Project Structure
----
-
-File with database connection properties:
-FirstRestProject/src/main/resources/db.properties
+h2 Project Structure
 
 ---
-Folder with Java sources - FirstRestProject/src/main/java/com/example/ 
 
-package entities - Entity-classes:
-    class User - model class from MySQL database
-    
-package controller - Controller-classes:
-    UserController - controller for User class
-    
-package service - Service-classes:
-    interface UserService - service interface
-    class UserServiceImp - service class
-    
-package dao - Repository-classes:
-    interface UserDao - dao interface
-    class UserDaoImpl - dao class
-    
-package configuration - Configuration-classes:
-    class WebConfiguration - Spring configuraion class
-    class AppConfiguration - Hibernate ORM ocnfiguration class
-    class WebInintializer - class with initialization of servlet container (opposed to web.xml)
+> `src\main\resources` – resources directory
+> `src\main\java` – sources directory
+
+The main files, which directory `src\main\resources` contains:
+
+* `db.properties` - file with definitions of MySQL, Hibernate and c3p0 library connection pooling properties
+
+The main packages and files, which directory `src\main\java` contains in the package `com.example`:
+
+> package `entities` - `@Entity` classes
+* `User` - model class corresponding `user` table in the database
+
+> package `model` - \[deprecated\] model classes from old project `helloworld`
+* `Message` - \[deprecated\] model class for old project `helloworld` performance
+
+> package `controller` - `@Controller` classes
+* `UserController` - controller class for `User` class
+* `MessageController` - \[deprecated\] controller class for old project `helloworld` performance
+
+> package `service` - `@Service` classes
+* `UserService` - service interface for `User` class
+* `UserServiceImpl` - service class for for `User` class
+
+> package `dao` - `@Repository` classes
+* `UserDao` - DAO interface for `User` class
+* `UserDaoImpl` - DAO class for `User` class
+
+> package `confiruration` - `@Configuration` classes
+* `WebConfiguration` - class for configuring the Spring MVC for application
+* `AppConfiguration` - class for configuring the Hibernate ORM with Spring MVC application
+* `WebInitializer` - class for initialization of Servlet container (used instead of web.xml)
