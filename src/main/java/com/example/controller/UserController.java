@@ -2,81 +2,83 @@ package com.example.controller;
 
 import com.example.entities.User;
 import com.example.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
-@RequestMapping("/rest/")
+@RequestMapping("/user/")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    //@RequestMapping(value = "{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    /*
+    SELECT via GET
+     */
     @GetMapping("{id}")
-    public ResponseEntity<User> getUser(@PathVariable("id") Integer id){
-        if(id == null){
-            return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
-        }
-        //new user = get existing user by id
-        //if user is null - 404 Not Found
-        //else - user and 200 OK
+    public ResponseEntity<User> getUser(@PathVariable("id") int id){
         User user = userService.get(id);
         if(user == null){
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT); //204
         }
-        return new ResponseEntity<User>(user, HttpStatus.OK);
+        return new ResponseEntity<>(user, HttpStatus.OK); //200
     }
 
-    //@RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    /*
+    INSERT via POST
+     */
     @PostMapping("")
-    public ResponseEntity<?> createUser(@RequestBody User user){
-        if(user == null){
-            return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
+    public ResponseEntity<User> createUser(@RequestBody User user){
+        if(user == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST); //400
         }
-        //save user in parameter
-        //return 200 OK
-        Integer id = userService.save(user);
-        return new ResponseEntity<User>(HttpStatus.OK);
-        //return new ResponseEntity.ok().body("New Book has been saved with ID:" + id);
+        try {
+            userService.save(user);
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.CONFLICT); //409
+        }
+        return new ResponseEntity<>(HttpStatus.OK); //200
     }
 
-    //@RequestMapping(value = ""/*"{id}"*/, method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    /*
+    UPDATE via PUT
+     */
     @PutMapping("{id}")
-    public ResponseEntity<?> modifyUser(@PathVariable("id") Integer id, @RequestBody User user/*, @PathVariable Integer id*/){
+    public ResponseEntity<User> modifyUser(@PathVariable("id") int id, @RequestBody User user){
         if(user == null){
-            return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST); //400
         }
-        //save user in parameter
-        //return 200 OK
-        userService.update(id, user);
-        return new ResponseEntity<User>(HttpStatus.OK);
+        try {
+            userService.update(id, user);
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY); //422
+        }
+        return new ResponseEntity<>(HttpStatus.OK); //200
     }
 
-    //@RequestMapping(value="{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    /*
+    DELETE via DELETE
+     */
     @DeleteMapping("{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable("id") Integer id){
-        //new user = get existing user by id
-        //if user is null - 404 Not Found
-        //delete user by id
-        //return 200 OK
-        if(id == null){
-            return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
+    public ResponseEntity<User> deleteUser(@PathVariable("id") int id){
+        try {
+            userService.delete(id);
+        } catch(Exception e){
+            return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY); //422
         }
-        userService.delete(id);
-        return new ResponseEntity<User>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK); //200
     }
 
-    //@RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    /*
+    SELECT * via GET
+     */
     @GetMapping("")
     public ResponseEntity<List<User>> getAllUsers(){
-        //new list of users = get all existing users
-        //return 200 OK
         List<User> users = userService.list();
-        return new ResponseEntity<List<User>>(HttpStatus.OK);
+        return new ResponseEntity<>(users, HttpStatus.OK); //200
     }
 }

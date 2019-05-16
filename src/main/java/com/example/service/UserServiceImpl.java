@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.dao.UserDao;
 import com.example.entities.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,25 +17,25 @@ public class UserServiceImpl implements UserService{
     private UserDao userDao;
 
     @Transactional
-    public Integer save(User user) {
+    public int save(User user) {
         return userDao.save(user);
     }
 
-    public User get(Integer id) {
+    public User get(int id) {
         return userDao.get(id);
     }
 
-    public List<User> list() {
-        return userDao.list();
-    }
-
     @Transactional
-    public void update(Integer id, User user) {
+    public void update(int id, User user) {
         userDao.update(id, user);
     }
 
     @Transactional
-    public void delete(Integer id) {
+    public void delete(int id) {
         userDao.delete(id);
+    }
+
+    public List<User> list() {
+        return userDao.list();
     }
 }
