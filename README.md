@@ -17,7 +17,7 @@ RESTful web service project with CRUD methods
 * Git
 
 ---
-h2 Database
+h1 Database h1
 
 ---
 
@@ -62,6 +62,7 @@ ADD CONSTRAINT `fk_dictionary_user`
 ```
 
 In result you must get the following graphic schema of the database:
+
 ![Graphic Schema of the Database](https://i.imgur.com/8m2QtUU.png)
 
 To populate the new clean database `service` by data you must execute the following commands in SQL editor of MySQL Workbench.
@@ -78,7 +79,7 @@ INSERT INTO `service`.`user` (`login`, `password`, `id_role`) VALUES ('user', 'q
 ```
 
 ---
-h2 Project Structure
+**Project Structure**
 
 ---
 
@@ -113,3 +114,21 @@ The main packages and files, which directory `src\main\java` contains in the pac
 * `WebConfiguration` - class for configuring the Spring MVC for application
 * `AppConfiguration` - class for configuring the Hibernate ORM with Spring MVC application
 * `WebInitializer` - class for initialization of Servlet container (used instead of web.xml)
+
+---
+**Building, Deployment and Running**
+
+---
+
+To build, deploy and run the app you must execute the following commands for Maven.
+
+Perform this to trigger WAR packaging:
+`mvn clean install`
+
+Perform this command to deploy the WAR automatically and run it on embedded Tomcat:
+`mvn tomcat7:run`
+
+---
+**Testing**
+
+---
