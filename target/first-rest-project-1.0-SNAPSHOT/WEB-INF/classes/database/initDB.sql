@@ -4,9 +4,9 @@ creation of the database 'service'
 CREATE SCHEMA `service` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 
 /*
-creation of the table 'dictionary'
+creation of the table 'role'
 */
-CREATE TABLE `service`.`dictionary` (
+CREATE TABLE `service`.`role` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `discriminator` VARCHAR(15) NULL,
   `name` VARCHAR(31) NOT NULL,
@@ -32,6 +32,6 @@ ADD INDEX `fk_dictionary_user_idx` (`id_role` ASC) VISIBLE;
 ALTER TABLE `service`.`user`
 ADD CONSTRAINT `fk_dictionary_user`
   FOREIGN KEY (`id_role`)
-  REFERENCES `service`.`dictionary` (`id`)
+  REFERENCES `service`.`role` (`id`)
   ON DELETE CASCADE
   ON UPDATE CASCADE;

@@ -1,8 +1,15 @@
+com\example\dao\RoleDaoImpl.class
 com\example\entities\User.class
+com\example\entities\Role.class
+com\example\service\RoleService.class
+com\example\dao\RoleDao.class
 com\example\controller\UserController.class
 com\example\dao\UserDaoImpl.class
 com\example\configuration\AppConfiguraion.class
+com\example\service\RoleServiceImpl.class
 com\example\dao\UserDao.class
+com\example\entities\Dictionary.class
+com\example\controller\RoleController.class
 com\example\service\UserServiceImpl.class
 com\example\service\UserService.class
 com\example\configuration\WebInitializer.class

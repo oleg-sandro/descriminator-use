@@ -1,8 +1,8 @@
 /*
-creation of 2 records in  the table 'dictionary'
+creation of 2 records in  the table 'role'
 */
-INSERT INTO `service`.`dictionary` (`discriminator`, `name`) VALUES ('role', 'user');
-INSERT INTO `service`.`dictionary` (`discriminator`, `name`) VALUES ('role', 'admin');
+INSERT INTO `service`.`role` (`discriminator`, `name`) VALUES ('role', 'user');
+INSERT INTO `service`.`role` (`discriminator`, `name`) VALUES ('role', 'admin');
 
 /*
 creation of 1 record in  the table 'user'
