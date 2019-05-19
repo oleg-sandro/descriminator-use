@@ -1,10 +1,10 @@
 package com.example.controller;
 
-import com.example.entities.Role;
+import com.example.model.Role;
 import com.example.service.RoleService;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
