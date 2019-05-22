@@ -16,9 +16,10 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
-        <springframework.version>4.3.0.RELEASE</springframework.version>
+        <springframework.version>5.1.7.RELEASE</springframework.version>
+        <springsecurity.version>5.1.5.RELEASE</springsecurity.version>
         <hibernate.version>5.2.8.Final</hibernate.version>
-        <jackson.library>2.8.7</jackson.library>
+        <jackson.library>2.9.8</jackson.library>
     </properties>
 
     <dependencies>
@@ -71,6 +72,23 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
