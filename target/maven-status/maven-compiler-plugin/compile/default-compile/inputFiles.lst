@@ -1,4 +1,5 @@
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\dao\RoleDaoImpl.java
+D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\configuration\SecurityConfig.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\model\Role.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\controller\TestController.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\configuration\AppConfiguraion.java
@@ -8,8 +9,10 @@ D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\examp
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\configuration\WebInitializer.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\model\User.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\service\UserService.java
+D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\configuration\MvcConfig.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\service\RoleService.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\dao\RoleDao.java
+D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\configuration\AppInitializer.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\controller\UserController.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\service\UserServiceImpl.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\service\RoleServiceImpl.java

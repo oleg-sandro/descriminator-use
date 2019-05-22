@@ -1,6 +1,8 @@
 com\example\model\Dictionary.class
 com\example\dao\RoleDaoImpl.class
+com\example\configuration\SecurityConfig.class
 com\example\service\RoleService.class
+com\example\configuration\MvcConfig.class
 com\example\dao\RoleDao.class
 com\example\controller\TestController.class
 com\example\controller\UserController.class
