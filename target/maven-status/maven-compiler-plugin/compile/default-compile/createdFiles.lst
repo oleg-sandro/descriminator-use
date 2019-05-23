@@ -1,8 +1,6 @@
 com\example\model\Dictionary.class
 com\example\dao\RoleDaoImpl.class
-com\example\configuration\SecurityConfig.class
 com\example\service\RoleService.class
-com\example\configuration\MvcConfig.class
 com\example\dao\RoleDao.class
 com\example\controller\TestController.class
 com\example\controller\UserController.class
@@ -15,5 +13,5 @@ com\example\controller\RoleController.class
 com\example\service\UserServiceImpl.class
 com\example\service\UserService.class
 com\example\configuration\WebInitializer.class
-com\example\configuration\WebConfiguration.class
 com\example\model\User.class
+com\example\configuration\AppConfig.class
