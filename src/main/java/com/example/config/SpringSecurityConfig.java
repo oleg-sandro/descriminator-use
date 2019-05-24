@@ -49,21 +49,25 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
-                .antMatchers("/hello").access("hasRole('ROLE_USER')")
-                .and().formLogin().defaultSuccessUrl("/hello", false);
+                .antMatchers("/*", "/hello").permitAll()
+                .antMatchers("/role/*").access("hasRole('ROLE_ADMIN')")
+                .antMatchers("/user/*").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
+                .anyRequest().authenticated()
+                .and()
+                .formLogin().defaultSuccessUrl("/hello", false);
 
     }
 
     @Bean
     @Override
     public UserDetailsService userDetailsService() {
-        UserDetails user =
+        UserDetails userDetails =
                 User.withDefaultPasswordEncoder()
                         .username("user")
                         .password("pass")
                         .roles("USER")
                         .build();
 
-        return new InMemoryUserDetailsManager(user);
+        return new InMemoryUserDetailsManager(userDetails);
     }
 }

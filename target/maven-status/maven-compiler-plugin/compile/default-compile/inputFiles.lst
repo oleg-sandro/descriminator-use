@@ -9,6 +9,7 @@ D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\examp
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\service\UserService.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\service\RoleService.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\dao\RoleDao.java
+D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\config\MvcConfig.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\controller\UserController.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\service\UserServiceImpl.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\config\HibernateConfig.java

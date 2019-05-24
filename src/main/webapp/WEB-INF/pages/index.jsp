@@ -5,6 +5,11 @@
 </head>
 <body>
     <div><h2>It is a home page</h2></div>
-    <a href="/hello">go to Hello page...</a>
+    <div><h3><a href="/hello">go to Hello page...</a></h3></div>
+    <div>
+        <a href="/reg">Register</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="/login">Login</a>
+    </div>
 </body>
 </html>

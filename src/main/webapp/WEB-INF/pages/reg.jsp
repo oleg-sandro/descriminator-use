@@ -13,8 +13,10 @@
         <input type="password" name="password" required>
         <br><br>
         <input type="submit" value="register">
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="/login">back to log in</a>
     </form>
+    &nbsp;&nbsp;
+    <a href="/index">Back to home page</a>
+    &nbsp;&nbsp;
+    <a href="/login">Log in</a>
 </body>
 </html>

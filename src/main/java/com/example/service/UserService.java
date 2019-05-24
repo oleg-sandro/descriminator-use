@@ -8,6 +8,7 @@ public interface UserService {
 
     int save(User user);
     User get(int id);
+    User get(String username);
     void update(int id, User user);
     void delete(int id);
     List<User> list();

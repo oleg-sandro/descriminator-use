@@ -32,7 +32,7 @@ public class AuthController {
         return "hello";
     }
 
-    @GetMapping("/login")
+    /*@GetMapping("/login")
     public String loginGet(@RequestParam(value = "error", required = false) boolean error, Model model) {
         System.out.println("GET /login");
         if(error==true){
@@ -52,9 +52,9 @@ public class AuthController {
                 if(user.getPassword().equals(password))
                     return "redirect:/welcome";
         return "redirect:/login";
-    }
+    }*/
 
-    /*@GetMapping("/reg")
+    @GetMapping("/reg")
     public String registerGet() {
         System.out.println("GET /reg");
         return "reg";
@@ -68,6 +68,6 @@ public class AuthController {
         user.setPassword(password);
         user.setId_role(2);
         userService.save(user);
-        return "redirect:/welcome";
-    }*/
+        return "redirect:/login";
+    }
 }
