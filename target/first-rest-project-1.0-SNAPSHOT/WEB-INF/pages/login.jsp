@@ -5,12 +5,15 @@
 </head>
 <body>
 <h1>Log in</h1>
-<form action="" method="post">
+<div id="login-error">
+    ${error}
+</div>
+<form action="../../j_spring_security_check" method="post">
     <label>Username:</label>
-    <input type="text" name="username" required>
+    <input id="j_username" type="text" name="j_username" required>
     <br><br>
     <label>Password:</label>
-    <input type="password" name="password" required>
+    <input id="j_password" type="password" name="j_password" required>
     <br><br>
     <input type="submit" value="login">
     &nbsp;&nbsp;&nbsp;&nbsp;

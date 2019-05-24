@@ -2,6 +2,7 @@ D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\examp
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\model\Role.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\config\SpringConfig.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\dao\UserDaoImpl.java
+D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\config\SpringSecurityConfig.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\controller\RoleController.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\model\User.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\service\UserService.java

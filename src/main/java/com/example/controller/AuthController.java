@@ -29,8 +29,13 @@ public class AuthController {
     }
 
     @GetMapping("/login")
-    public String loginGet() {
+    public String loginGet(@RequestParam(value = "error", required = false) boolean error, Model model) {
         System.out.println("GET /login");
+        if(error==true){
+            model.addAttribute("error", "You have entered an invalid username or password");
+        }else{
+            model.addAttribute("error", "");
+        }
         return "login";
     }
 

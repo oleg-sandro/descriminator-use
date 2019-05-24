@@ -8,7 +8,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 /*
-Spring config class
+Spring configuration class
  */
 @Configuration
 @EnableWebMvc

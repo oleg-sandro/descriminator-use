@@ -10,9 +10,8 @@ import static org.hibernate.cfg.AvailableSettings.*;
 import java.util.Properties;
 
 /*
-Hibernate config class
+Hibernate configuration class
  */
-
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement

@@ -3,9 +3,8 @@ package com.example.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /*
-Servlet container initialization
+Servlet container initialization class
  */
-
 public class SpringMvcDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
