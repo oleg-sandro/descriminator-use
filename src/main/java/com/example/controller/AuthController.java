@@ -20,12 +20,16 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    private AtomicLong counter = new AtomicLong();
+    @GetMapping(value = {"/", "/index"})
+    public String home() {
+        System.out.println("GET /index");
+        return "index";
+    }
 
-    @GetMapping("/")
-    public String welcome() {
-        System.out.println("GET /");
-        return String.valueOf(counter.incrementAndGet());
+    @GetMapping("/hello")
+    public String hello() {
+        System.out.println("GET /hello");
+        return "hello";
     }
 
     @GetMapping("/login")
@@ -50,7 +54,7 @@ public class AuthController {
         return "redirect:/login";
     }
 
-    @GetMapping("/reg")
+    /*@GetMapping("/reg")
     public String registerGet() {
         System.out.println("GET /reg");
         return "reg";
@@ -65,11 +69,5 @@ public class AuthController {
         user.setId_role(2);
         userService.save(user);
         return "redirect:/welcome";
-    }
-
-    @GetMapping(value = {"/home", "/welcome"})
-    public String home() {
-        System.out.println("GET /welcome");
-        return "welcome";
-    }
+    }*/
 }

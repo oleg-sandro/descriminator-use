@@ -5,6 +5,7 @@ D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\examp
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\config\SpringSecurityConfig.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\controller\RoleController.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\model\User.java
+D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\config\SpringSecurityWebAppInitializer.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\service\UserService.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\service\RoleService.java
 D:\Work\Development\Workspace\Java Idea\FirstRestProject\src\main\java\com\example\dao\RoleDao.java
