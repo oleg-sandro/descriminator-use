@@ -1,3 +1,4 @@
+com\example\config\SpringInitializer.class
 com\example\model\Dictionary.class
 com\example\controller\AuthController.class
 com\example\dao\RoleDaoImpl.class
@@ -9,11 +10,10 @@ com\example\dao\UserDaoImpl.class
 com\example\service\RoleServiceImpl.class
 com\example\model\Role.class
 com\example\dao\UserDao.class
+com\example\service\UserDetailsServiceImpl.class
 com\example\config\HibernateConfig.class
 com\example\controller\RoleController.class
 com\example\service\UserServiceImpl.class
 com\example\service\UserService.class
 com\example\config\SpringSecurityConfig.class
-com\example\config\SpringSecurityWebAppInitializer.class
-com\example\config\SpringMvcDispatcherServletInitializer.class
 com\example\model\User.class

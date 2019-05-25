@@ -63,6 +63,8 @@
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.1.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.1.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:5.1.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-taglibs:5.1.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-acl:5.1.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.taglibs:taglibs-standard-impl:1.2.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet.jsp:javax.servlet.jsp-api:2.3.1" level="project" />

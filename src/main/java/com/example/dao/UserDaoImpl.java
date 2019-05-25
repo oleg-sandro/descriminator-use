@@ -27,9 +27,10 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public User get(String username) {
-        Query query = sessionFactory.getCurrentSession().createQuery("FROM User u where u.login = :name");
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from User u where u.login = :name");
         query.setParameter("name", username);
-        return (User) query.getResultList().get(1);
+        return (User) query.getResultList().get(0);
     }
 
     public void update(int id, User user2) {

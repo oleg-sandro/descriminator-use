@@ -5,6 +5,7 @@ import com.example.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class UserController {
     SELECT via GET
      */
     @GetMapping("{id}")
+    //@PreAuthorize("#id == authentication.id")
     public ResponseEntity<User> getUser(@PathVariable("id") int id){
         User user = userService.get(id);
         if(user == null){
@@ -27,6 +29,17 @@ public class UserController {
         }
         return new ResponseEntity<>(user, HttpStatus.OK); //200
     }
+
+    /*
+    @GetMapping("login/{login}")
+    public ResponseEntity<User> getUser(@PathVariable("login") String login){
+        User user = userService.get(login);
+        if(user == null){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT); //204
+        }
+        return new ResponseEntity<>(user, HttpStatus.OK); //200
+    }
+    */
 
     /*
     INSERT via POST

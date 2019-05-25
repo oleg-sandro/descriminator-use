@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.model.User;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -31,28 +32,6 @@ public class AuthController {
         System.out.println("GET /hello");
         return "hello";
     }
-
-    /*@GetMapping("/login")
-    public String loginGet(@RequestParam(value = "error", required = false) boolean error, Model model) {
-        System.out.println("GET /login");
-        if(error==true){
-            model.addAttribute("error", "You have entered an invalid username or password");
-        }else{
-            model.addAttribute("error", "");
-        }
-        return "login";
-    }
-
-    @PostMapping("/login")
-    public String loginPost(@RequestParam String username, @RequestParam String password) {
-        System.out.println("POST /login");
-        List<User> users = userService.list();
-        for(User user : users)
-            if(user.getLogin().equals(username))
-                if(user.getPassword().equals(password))
-                    return "redirect:/welcome";
-        return "redirect:/login";
-    }*/
 
     @GetMapping("/reg")
     public String registerGet() {
