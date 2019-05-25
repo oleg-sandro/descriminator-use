@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.model.User;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,9 +43,10 @@ public class AuthController {
     @PostMapping("/reg")
     public String registerPost(@RequestParam String username, @RequestParam String password) {
         System.out.println("POST /reg");
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         User user = new User();
         user.setLogin(username);
-        user.setPassword(password);
+        user.setPassword(passwordEncoder.encode(password));
         user.setId_role(2);
         userService.save(user);
         return "redirect:/login";

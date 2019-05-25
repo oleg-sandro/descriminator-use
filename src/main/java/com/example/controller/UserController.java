@@ -21,7 +21,6 @@ public class UserController {
     SELECT via GET
      */
     @GetMapping("{id}")
-    //@PreAuthorize("#id == authentication.id")
     public ResponseEntity<User> getUser(@PathVariable("id") int id){
         User user = userService.get(id);
         if(user == null){
