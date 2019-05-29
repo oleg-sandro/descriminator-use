@@ -23,9 +23,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private RoleService roleService;
 
     @Override
-    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        User user = userService.get(login);
+        User user = userService.get(username);
         if(user != null){
             Role role = roleService.get(user.getId_role());
 
@@ -33,7 +33,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             roles.add(new SimpleGrantedAuthority("ROLE_" + role.getName()));
 
             UserDetails userDetails = new org.springframework.security.core.userdetails
-                    .User(user.getLogin(), user.getPassword(), roles);
+                    .User(user.getUsername(), user.getPassword(), roles);
             return userDetails;
         }
         return null;

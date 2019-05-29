@@ -16,25 +16,35 @@ public class RoleServiceImpl implements RoleService {
     @Autowired
     private RoleDao roleDao;
 
+    @Override
     @Transactional
-    public int save(Role role) {
+    public Integer save(Role role) {
         return roleDao.save(role);
     }
 
-    public Role get(int id) {
+    @Override
+    public Role get(Integer id) {
         return roleDao.get(id);
     }
 
+    @Override
+    public Role get(String name) {
+        return roleDao.get(name);
+    }
+
+    @Override
     @Transactional
-    public void update(int id, Role role) {
+    public void update(Integer id, Role role) {
         roleDao.update(id, role);
     }
 
+    @Override
     @Transactional
-    public void delete(int id) {
+    public void delete(Integer id) {
         roleDao.delete(id);
     }
 
+    @Override
     public List<Role> list() {
         return roleDao.list();
     }

@@ -1,4 +1,5 @@
 com\example\config\SpringInitializer.class
+com\example\config\WebSecurity.class
 com\example\model\Dictionary.class
 com\example\controller\AuthController.class
 com\example\dao\RoleDaoImpl.class

@@ -5,7 +5,6 @@ import com.example.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,7 +20,7 @@ public class UserController {
     SELECT via GET
      */
     @GetMapping("{id}")
-    public ResponseEntity<User> getUser(@PathVariable("id") int id){
+    public ResponseEntity<User> getUser(@PathVariable("id") Integer id){
         User user = userService.get(id);
         if(user == null){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT); //204
@@ -30,9 +29,9 @@ public class UserController {
     }
 
     /*
-    @GetMapping("login/{login}")
-    public ResponseEntity<User> getUser(@PathVariable("login") String login){
-        User user = userService.get(login);
+    @GetMapping("login/{username}")
+    public ResponseEntity<User> getUser(@PathVariable("username") String username){
+        User user = userService.get(username);
         if(user == null){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT); //204
         }
@@ -60,7 +59,7 @@ public class UserController {
     UPDATE via PUT
      */
     @PutMapping("{id}")
-    public ResponseEntity<User> modifyUser(@PathVariable("id") int id, @RequestBody User user){
+    public ResponseEntity<User> modifyUser(@PathVariable("id") Integer id, @RequestBody User user){
         if(user == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST); //400
         }
@@ -76,7 +75,7 @@ public class UserController {
     DELETE via DELETE
      */
     @DeleteMapping("{id}")
-    public ResponseEntity<User> deleteUser(@PathVariable("id") int id){
+    public ResponseEntity<User> deleteUser(@PathVariable("id") Integer id){
         try {
             userService.delete(id);
         } catch(Exception e){

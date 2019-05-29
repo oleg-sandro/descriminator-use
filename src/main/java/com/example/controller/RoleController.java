@@ -20,7 +20,7 @@ public class RoleController {
     SELECT via GET
      */
     @GetMapping("{id}")
-    public ResponseEntity<Role> getRole(@PathVariable("id") int id){
+    public ResponseEntity<Role> getRole(@PathVariable("id") Integer id){
         Role role = roleService.get(id);
         if(role == null){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT); //204
@@ -48,7 +48,7 @@ public class RoleController {
     UPDATE via PUT
      */
     @PutMapping("{id}")
-    public ResponseEntity<Role> modifyRole(@PathVariable("id") int id, @RequestBody Role role){
+    public ResponseEntity<Role> modifyRole(@PathVariable("id") Integer id, @RequestBody Role role){
         if(role == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST); //400
         }
@@ -64,7 +64,7 @@ public class RoleController {
     DELETE via DELETE
      */
     @DeleteMapping("{id}")
-    public ResponseEntity<Role> deleteRole(@PathVariable("id") int id){
+    public ResponseEntity<Role> deleteRole(@PathVariable("id") Integer id){
         try {
             roleService.delete(id);
         } catch(Exception e){

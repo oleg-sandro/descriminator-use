@@ -11,19 +11,19 @@ public abstract class Dictionary {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private int id;
+    protected Integer id;
 
     @Column(name = "name", nullable = false)
-    private String name;
+    protected String name;
 
-    @Column(name = "ext_id")
-    private Integer ext_id;
+    @Column(name = "ext_id", nullable = false)
+    protected Integer ext_id;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

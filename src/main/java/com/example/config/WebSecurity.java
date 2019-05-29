@@ -14,7 +14,6 @@ public class WebSecurity {
 
     public boolean checkUserId(Authentication authentication, int id){
         String name = authentication.getName();
-        System.out.println(name + " at " + id);
         User user = userService.get(name);
         return user != null && user.getId() == id;
     }

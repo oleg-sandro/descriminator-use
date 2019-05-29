@@ -16,16 +16,27 @@ public class RoleDaoImpl implements RoleDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public int save(Role role) {
+    @Override
+    public Integer save(Role role) {
         sessionFactory.getCurrentSession().save(role);
         return role.getId();
     }
 
-    public Role get(int id) {
+    @Override
+    public Role get(Integer id) {
         return sessionFactory.getCurrentSession().get(Role.class, id);
     }
 
-    public void update(int id, Role role2) {
+    @Override
+    public Role get(String name) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Role r where r.name = :name");
+        query.setParameter("name", name);
+        return (Role) query.getResultList().get(0);
+    }
+
+    @Override
+    public void update(Integer id, Role role2) {
         Session session = sessionFactory.getCurrentSession();
         Role role1 = session.byId(Role.class).load(id);
         role1.setName(role2.getName());
@@ -33,12 +44,14 @@ public class RoleDaoImpl implements RoleDao {
         session.flush();
     }
 
-    public void delete(int id) {
+    @Override
+    public void delete(Integer id) {
         Session session = sessionFactory.getCurrentSession();
         Role role = session.byId(Role.class).load(id);
         session.delete(role);
     }
 
+    @Override
     public List<Role> list() {
         Session session = sessionFactory.getCurrentSession();
         CriteriaBuilder cb = session.getCriteriaBuilder();

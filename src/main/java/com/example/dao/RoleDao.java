@@ -6,9 +6,10 @@ import java.util.List;
 
 public interface RoleDao {
 
-    int save(Role role);
-    Role get(int id);
-    void update(int id, Role role);
-    void delete(int id);
+    Integer save(Role role);
+    Role get(Integer id);
+    Role get(String name);
+    void update(Integer id, Role role);
+    void delete(Integer id);
     List<Role> list();
 }

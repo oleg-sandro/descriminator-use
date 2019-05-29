@@ -16,12 +16,14 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserDao userDao;
 
+    @Override
     @Transactional
-    public int save(User user) {
+    public Integer save(User user) {
         return userDao.save(user);
     }
 
-    public User get(int id) {
+    @Override
+    public User get(Integer id) {
         return userDao.get(id);
     }
 
@@ -30,16 +32,19 @@ public class UserServiceImpl implements UserService{
         return userDao.get(username);
     }
 
+    @Override
     @Transactional
-    public void update(int id, User user) {
+    public void update(Integer id, User user) {
         userDao.update(id, user);
     }
 
+    @Override
     @Transactional
-    public void delete(int id) {
+    public void delete(Integer id) {
         userDao.delete(id);
     }
 
+    @Override
     public List<User> list() {
         return userDao.list();
     }

@@ -3,19 +3,10 @@ package com.example.controller;
 import com.example.model.User;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
-
-/**
- * This class was created for testing of Tomcat's successful launch
- */
 @Controller
 public class AuthController {
 
@@ -34,19 +25,17 @@ public class AuthController {
         return "hello";
     }
 
-    @GetMapping("/reg")
-    public String registerGet() {
-        System.out.println("GET /reg");
-        return "reg";
+    @GetMapping("/signup")
+    public String signUp() {
+        System.out.println("GET /signup");
+        return "signup";
     }
 
-    @PostMapping("/reg")
-    public String registerPost(@RequestParam String username, @RequestParam String password) {
-        System.out.println("POST /reg");
+    @PostMapping("/signup")
+    public String signUp(@RequestParam String username, @RequestParam String password, @RequestParam String email) {
+        System.out.println("POST /signup");
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        User user = new User();
-        user.setLogin(username);
-        user.setPassword(passwordEncoder.encode(password));
+        User user = new User(username, passwordEncoder.encode(password), email);
         user.setId_role(2);
         userService.save(user);
         return "redirect:/login";
