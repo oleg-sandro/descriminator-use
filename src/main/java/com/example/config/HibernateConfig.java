@@ -41,6 +41,7 @@ public class HibernateConfig {
         props.put(C3P0_MAX_SIZE, env.getProperty("hibernate.c3p0.max_size"));
         props.put(C3P0_ACQUIRE_INCREMENT, env.getProperty("hibernate.c3p0.acquire_increment"));
         props.put(C3P0_TIMEOUT, env.getProperty("hibernate.c3p0.timeout"));
+        props.put(C3P0_IDLE_TEST_PERIOD, env.getProperty("hibernate.c3p0.idle_test_period"));
         props.put(C3P0_MAX_STATEMENTS, env.getProperty("hibernate.c3p0.max_statements"));
 
         factoryBean.setHibernateProperties(props);
