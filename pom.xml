@@ -18,7 +18,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <springframework.version>4.3.0.RELEASE</springframework.version>
         <hibernate.version>5.2.8.Final</hibernate.version>
-        <jackson.library>2.8.7</jackson.library>
+        <jackson.library>2.12.6.1</jackson.library>
     </properties>
 
     <dependencies>
